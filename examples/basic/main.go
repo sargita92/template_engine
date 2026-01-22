@@ -21,7 +21,7 @@ func main() {
 			`,
 		})
 
-	err := e.FillDocx("./testdata/input.docx", "./testdata/output.docx")
+	err := e.FillDocx("./examples/basic/testdata/input.docx", "./examples/basic/testdata/output.docx")
 
 	if err != nil {
 		log.Fatal(err)
