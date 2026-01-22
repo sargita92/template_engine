@@ -1,0 +1,9 @@
+/bin/
+/dist/
+*.exe
+*.out
+*.log
+.DS_Store
+.idea/
+.vscode/
+examples/**/output.docx
