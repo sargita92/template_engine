@@ -1,10 +1,7 @@
 package engine
 
 import (
-	"github.com/sargita92/template_engine/ast"
-	"github.com/sargita92/template_engine/docx"
 	"github.com/sargita92/template_engine/internal/legacy"
-	"github.com/sargita92/template_engine/parser"
 )
 
 // Engine é a fachada pública da biblioteca
@@ -37,19 +34,4 @@ func (e *Engine) ProcessXML(xml string) string {
 // FillDocx preenche um DOCX usando o engine legado
 func (e *Engine) FillDocx(inputPath, outputPath string) error {
 	return legacy.FillDocx(inputPath, outputPath, e.replaces)
-}
-
-// ===============================
-// NOVA PIPELINE (AST)
-// ===============================
-
-// FillDocxFromText gera um DOCX a partir de texto puro usando AST
-func (e *Engine) FillDocxFromText(outputPath string, text string) error {
-	doc := parser.Parse(text)
-	return docx.Write(outputPath, doc)
-}
-
-// FillDocxFromAST gera um DOCX diretamente a partir de um AST.Document
-func (e *Engine) FillDocxFromAST(outputPath string, doc ast.Document) error {
-	return docx.Write(outputPath, doc)
 }

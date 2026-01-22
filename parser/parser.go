@@ -1,9 +1,8 @@
 package parser
 
 import (
-	"strings"
-
 	"github.com/sargita92/template_engine/ast"
+	"strings"
 )
 
 // Parse transforma um texto em AST.Document
